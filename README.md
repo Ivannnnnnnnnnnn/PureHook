@@ -19,18 +19,15 @@ Clone this repository:
 ```bash
 git clone https://github.com/yourusername/PureHook.git
 cd PureHook
+```
 Compile the source code into a static or dynamic library. This can be done using CMake:
-
-bash
-Copy
-Edit
+```
 mkdir build
 cd build
 cmake ..
 cmake --build .
-Include PureHook.h in your project and link against PureHook.lib (or the appropriate build target).
 ```
-API
+## **API**
 CreateHook(targetFunction, detourFunction, origFunctionPointer): Creates a hook for the specified function, where targetFunction is the function to hook, detourFunction is the new function to call, and origFunctionPointer stores the original function.
 
 EnableHook(targetFunction): Enables the hook for the target function.
@@ -39,8 +36,8 @@ DisableHook(targetFunction): Disables the hook and restores the original functio
 
 RemoveHook(targetFunction): Removes the hook completely.
 
-License
+## **License**
 PureHook is licensed under the MIT License. See LICENSE for more details.
 
-Contribution
+## **Contributions**
 We welcome contributions! If you find a bug or want to improve the library, feel free to fork this project and submit a pull request.

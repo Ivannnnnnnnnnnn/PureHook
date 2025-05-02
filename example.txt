@@ -1,0 +1,29 @@
+Example usage
+
+#include "PureHook.h"
+#include <iostream>
+
+int __declspec(noinline) Add(int a, int b) {
+    return a + b;
+}
+
+int (*origAdd)(int, int) = nullptr;
+
+int HookedAdd(int a, int b) {
+    std::cout << "Hooked: " << a << ", " << b << std::endl;
+    return origAdd(a, b);
+}
+
+int main() {
+    std::cout << "Original: " << Add(2, 3) << std::endl;
+
+    CreateHook((void*)&Add, (void*)&HookedAdd, (void**)&origAdd);
+    EnableHook((void*)&Add);
+
+    std::cout << "Hooked: " << Add(2, 3) << std::endl;
+
+    DisableHook((void*)&Add);
+    std::cout << "Unhooked: " << Add(2, 3) << std::endl;
+
+    return 0;
+}

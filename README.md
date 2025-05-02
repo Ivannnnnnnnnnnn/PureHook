@@ -16,6 +16,11 @@ PureHook is a lightweight, high-performance, and easy-to-use C/C++ library for f
 - Windows (x86, x64)
 - A C++11 compliant compiler (e.g., MSVC, GCC)
 
+## **Known Limitations**
+- **Windows only (no Linux/macOS support)**
+
+- **No hot-patching of system functions (yet)**
+
 ## **Installation**
 Clone this repository:
 ```bash

@@ -1,4 +1,5 @@
-__**PureHook**__
+**PureHook**
+
 
 PureHook is a lightweight, high-performance, and easy-to-use C/C++ library for function hooking and detouring. It is designed to provide seamless integration with any application, allowing you to intercept and replace function calls at runtime. Perfect for game modding, debugging, or creating advanced software tools.
 

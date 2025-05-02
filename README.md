@@ -29,7 +29,7 @@ cd build
 cmake ..
 cmake --build .
 Include PureHook.h in your project and link against PureHook.lib (or the appropriate build target).
-
+```
 API
 CreateHook(targetFunction, detourFunction, origFunctionPointer): Creates a hook for the specified function, where targetFunction is the function to hook, detourFunction is the new function to call, and origFunctionPointer stores the original function.
 

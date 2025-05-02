@@ -28,6 +28,7 @@ mkdir build
 cd build
 cmake ..
 cmake --build .
+
 ```
 ## **API**
 CreateHook(targetFunction, detourFunction, origFunctionPointer): Creates a hook for the specified function, where targetFunction is the function to hook, detourFunction is the new function to call, and origFunctionPointer stores the original function.

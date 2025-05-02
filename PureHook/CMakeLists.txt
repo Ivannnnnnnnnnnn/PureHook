@@ -1,27 +1,28 @@
-﻿# Minimum CMake version required
 cmake_minimum_required(VERSION 3.10)
+project(PureHook VERSION 1.0.0 LANGUAGES C CXX)
 
-# Set the project name
-project(PureHook VERSION 1.0)
-
-# Set C++ standard
+# Use C++11 standard
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Define include directories
-include_directories(${PROJECT_SOURCE_DIR})
-
-# Add the source files
-add_library(PureHook STATIC
-    PureHook.cpp
-    Trampoline.cpp
-    MemoryUtils.cpp
+# Add source files
+set(PUREHOOK_SOURCES
+    src/PureHook.cpp
+    src/Trampoline.cpp
+    src/HookManager.cpp
+    include/PureHook.h
+    include/Trampoline.h
+    include/HookManager.h
 )
 
-# Optional: If you're creating an executable for testing purposes
-# add_executable(ExampleExample main.cpp)
-# target_link_libraries(ExampleExample PureHook)
+# Create the PureHook library
+add_library(PureHook STATIC ${PUREHOOK_SOURCES})
+target_include_directories(PureHook PUBLIC include)
 
-# Optionally set the installation path
-install(TARGETS PureHook DESTINATION lib)
-install(FILES PureHook.h DESTINATION include)
+# Optional: Add an example target if you have one
+option(BUILD_EXAMPLE "Build example usage program" ON)
+
+if(BUILD_EXAMPLE)
+    add_executable(PureHookExample example/main.cpp)
+    target_link_libraries(PureHookExample PRIVATE PureHook)
+endif()

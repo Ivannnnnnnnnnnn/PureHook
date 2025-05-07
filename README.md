@@ -45,7 +45,7 @@ DisableHook(targetFunction): Disables the hook and restores the original functio
 RemoveHook(targetFunction): Removes the hook completely.
 
 ## **License**
-PureHook is licensed under the MIT License. See LICENSE for more details.
+PureHook is licensed under the MIT License. see the [LICENSE](LICENSE) file for details.
 
 ## **Contributions**
 We welcome contributions! If you find a bug or want to improve the library, feel free to fork this project and submit a pull request.
